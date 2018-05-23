@@ -1,9 +1,14 @@
 import React from 'react';
+import EntryComment from './EntryComment.jsx'
 
-const Comments = () => {
+const Comments = (props) => {
 	return(
 		<div>
-		Comments
+			{props.comments.map((item,i) =>{
+				return(
+					<EntryComment item={item} key={i}/>
+				)
+			})}
 		</div>
 	)
 }
