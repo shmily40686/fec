@@ -16,8 +16,18 @@ app.get("/api/comments",function(req,res) {
 		if(err) {
 			res.status(400).send(err)
 		} else {
-			console.log("data",data)
 			res.status(200).send(data)
+		}
+	})
+})
+
+app.post("/api/comments",function(req,res) {
+	youTube.saveOne(req.body,function(err,data) {
+		if(err) {
+			res.status(400).send(err)
+		} else {
+			res.status(200).send(data)
+			console.log("data",data)
 		}
 	})
 })

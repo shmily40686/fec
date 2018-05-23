@@ -28,4 +28,14 @@ module.exports.findAll = function(cb){
 	})
 }
 
+module.exports.saveOne = function(text,cb) {
+	var comment = new Comments(text);
+	comment.save(function (err) {
+		if (err) {
+			cb(err, null)
+		} else {
+			cb(null, comment)
+		}
+	});
+}
 // module.exports = Comments;

@@ -1,13 +1,18 @@
 import React from 'react';
+import SortList from './SortList.jsx';
 
 const TopBar = (props) => {
 	return(
 		<div>
-			<div>{props.comments.length} Comments</div>
-			<select>
-  				<option value="Top comments">Top comments</option>
-  				<option value="Newest first">Newest first</option>
-			</select>
+			<div>
+				<h2 className="topBarComment">{props.comments.length} Comments</h2>
+				<div>
+					<div className="sortBar" onClick={props.changeToShowOrHide}>SORT BY</div>
+					<div className="selectBox">
+					{props.showOrHide()}
+					</div>
+				</div>
+			</div>
 		</div>
 	)
 }
